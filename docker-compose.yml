@@ -1,0 +1,12 @@
+services:
+  bot:
+    image: ghcr.io/gladishevvasiliy/stm-bot:latest
+    restart: unless-stopped
+    env_file: ./bot.env
+
+  slack-to-telegram:
+    image: ghcr.io/gladishevvasiliy/slack-to-telegram:latest
+    restart: unless-stopped
+    env_file: ./slack-to-telegram.env
+    ports:
+      - "3000:3000"
