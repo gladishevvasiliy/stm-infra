@@ -4,6 +4,18 @@ services:
     restart: unless-stopped
     env_file: ./bot.env
 
+  bot-test:
+    image: ghcr.io/gladishevvasiliy/stm-bot:latest
+    restart: unless-stopped
+    env_file: ./bot-test.env
+
+  stm-admin-bot:
+    image: ghcr.io/gladishevvasiliy/stm-admin-bot:latest
+    restart: unless-stopped
+    env_file: ./stm-admin-bot.env
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
   slack-to-telegram:
     image: ghcr.io/gladishevvasiliy/slack-to-telegram:latest
     restart: unless-stopped

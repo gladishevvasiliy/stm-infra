@@ -1,2 +1,4 @@
 bot.env
+bot-test.env
 slack-to-telegram.env
+stm-admin-bot.env
