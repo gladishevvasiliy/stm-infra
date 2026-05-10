@@ -5,7 +5,7 @@ services:
     env_file: ./bot.env
 
   bot-test:
-    image: ghcr.io/gladishevvasiliy/stm-bot:latest
+    image: ghcr.io/gladishevvasiliy/stm-bot:test
     restart: unless-stopped
     env_file: ./bot-test.env
 
