@@ -13,7 +13,7 @@ services:
     image: ghcr.io/gladishevvasiliy/stm-bot:latest
     command: ["node", "admin/index.js"]
     restart: unless-stopped
-    env_file: ./stm-admin-bot.env
+    env_file: ./bot.env
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
