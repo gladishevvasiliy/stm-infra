@@ -14,6 +14,8 @@ services:
     command: ["node", "admin/index.js"]
     restart: unless-stopped
     env_file: ./stm-admin-bot.env
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
 
   slack-to-telegram:
     image: ghcr.io/gladishevvasiliy/slack-to-telegram:latest
