@@ -11,7 +11,7 @@ services:
 
   stm-admin-bot:
     image: ghcr.io/gladishevvasiliy/stm-bot:latest
-    command: ["node", "admin/index.js"]
+    command: ["node", "build/admin/index.js"]
     restart: unless-stopped
     env_file: ./bot.env
     volumes:
