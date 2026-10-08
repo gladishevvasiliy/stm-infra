@@ -3,6 +3,8 @@ services:
     image: ghcr.io/gladishevvasiliy/stm-bot:latest
     restart: unless-stopped
     env_file: ./bot.env
+    volumes:
+      - buddy-report-settings:/app/report-settings:ro
 
   bot-test:
     image: ghcr.io/gladishevvasiliy/stm-bot:test
@@ -16,6 +18,7 @@ services:
     env_file: ./bot.env
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - buddy-report-settings:/app/report-settings
 
   slack-to-telegram:
     image: ghcr.io/gladishevvasiliy/slack-to-telegram:latest
@@ -23,3 +26,6 @@ services:
     env_file: ./slack-to-telegram.env
     ports:
       - "3000:3000"
+
+volumes:
+  buddy-report-settings:
